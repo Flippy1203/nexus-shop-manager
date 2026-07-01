@@ -4,104 +4,209 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy — NEXUS Shop Manager</title>
+    <meta name="description" content="Privacy policy for NEXUS Shop Manager, a private internal application for managing a single Etsy shop.">
     <style>
+        :root {
+            --color-bg: #f8fafc;
+            --color-surface: #ffffff;
+            --color-text: #1e293b;
+            --color-text-secondary: #475569;
+            --color-primary: #0f4c81;
+            --color-primary-dark: #083055;
+            --color-accent: #2563eb;
+            --color-border: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            --radius: 10px;
+            --max-width: 960px;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+            font-family: var(--font-sans);
+            line-height: 1.65;
+            color: var(--color-text);
+            background: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
+
         .container {
-            max-width: 800px;
+            max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 1.5rem;
         }
-        header {
-            background: #1a1a2e;
+
+        .policy-header {
+            background: var(--color-primary-dark);
             color: #fff;
-            padding: 2rem 0;
+            padding: 2rem 0 1.75rem;
             text-align: center;
         }
-        header h1 {
+
+        .policy-header h1 {
             font-size: 1.5rem;
-            font-weight: 600;
+            font-weight: 700;
         }
-        nav {
-            background: #16213e;
-            padding: 1rem 0;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-        nav a {
-            color: #e0e0e0;
-            text-decoration: none;
+
+        .policy-header p {
+            opacity: 0.85;
+            margin-top: 0.35rem;
             font-size: 0.95rem;
         }
-        nav a:hover {
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 0.75rem;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
             color: #fff;
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
+
+        .site-header {
+            background: var(--color-primary-dark);
+            color: #fff;
+            padding: 1.25rem 0;
+        }
+
+        .site-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .brand {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            text-decoration: none;
+            color: #fff;
+            white-space: nowrap;
+        }
+
+        .nav {
+            display: flex;
+            gap: 1.75rem;
+            align-items: center;
+        }
+
+        .nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .nav a:hover {
+            color: #fff;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
         main {
-            padding: 2rem 0;
+            padding: 2.5rem 0 3.5rem;
         }
+
         h2 {
             font-size: 1.2rem;
-            margin: 1.5rem 0 0.75rem;
-            color: #1a1a2e;
+            font-weight: 700;
+            margin: 2rem 0 0.6rem;
+            color: var(--color-primary-dark);
         }
+
         p {
             margin-bottom: 1rem;
         }
-        ul {
+
+        ul, ol {
             margin-left: 1.5rem;
             margin-bottom: 1rem;
         }
+
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
-        footer {
-            background: #1a1a2e;
-            color: #aaa;
-            text-align: center;
-            padding: 1.5rem 0;
-            font-size: 0.85rem;
+
+        a {
+            color: var(--color-primary);
         }
-        footer a {
-            color: #ccc;
+
+        a:hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
+
+        :focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+            border-radius: 3px;
+        }
+
+        @media print {
+            .site-header,
+            .policy-header {
+                background: none;
+                color: #000;
+            }
+            .nav a {
+                color: #000;
+                text-decoration: underline;
+            }
+        }
+
         @media (max-width: 600px) {
-            nav ul {
-                flex-direction: column;
-                gap: 0.75rem;
-                align-items: center;
+            .nav {
+                gap: 1rem;
+            }
+            .nav a {
+                font-size: 0.85rem;
+            }
+            main {
+                padding: 1.75rem 0 2.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
+    <header class="policy-header">
         <div class="container">
             <h1>Privacy Policy</h1>
             <p>NEXUS Shop Manager</p>
+            <a class="back-link" href="index.html">← Back to home</a>
         </div>
     </header>
-    <nav>
+
+    <header class="site-header">
         <div class="container">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms of Use</a></li>
-            </ul>
+            <a class="brand" href="index.html">NEXUS Shop Manager</a>
+            <nav class="nav" aria-label="Primary">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </nav>
         </div>
-    </nav>
+    </header>
+
     <main class="container">
         <p><strong>Last updated:</strong> 2026-06-30</p>
 
@@ -110,69 +215,83 @@
             NEXUS Shop Manager is a private internal application used solely by the shop owner and authorized internal users to manage a single Etsy shop. This Privacy Policy explains what data is accessed, how it is used, and how it is protected.
         </p>
 
-        <h2>2. Data We Access</h2>
-        <p>To perform its core functions, the application accesses the following categories of data through official Etsy and manufacturing service integrations:</p>
+        <h2>2. Information We Access</h2>
+        <p>
+            To perform its core functions, the application accesses information through official Etsy and manufacturing service integrations. Access is scoped to the minimum permissions required for shop operations.
+        </p>
+        <p>Information accessed may include:</p>
         <ul>
-            <li><strong>Shop data:</strong> Listings, inventory levels, pricing, and product details.</li>
-            <li><strong>Order data:</strong> Customer names, shipping addresses, order items, and order status.</li>
-            <li><strong>Fulfillment data:</strong> Tracking numbers, shipping carriers, and fulfillment status.</li>
-            <li><strong>Account data:</strong> Shop settings and integration credentials required for API access.</li>
+            <li><strong>Shop and listing data:</strong> Product listings, inventory levels, pricing, media URLs, and shop settings.</li>
+            <li><strong>Order data:</strong> Customer names, shipping addresses, line items, order status, and timestamps.</li>
+            <li><strong>Fulfillment data:</strong> Tracking numbers, shipping carriers, shipment status, and fulfillment timestamps.</li>
+            <li><strong>Account and integration data:</strong> Shop identifiers and credentials required to maintain authorized API access.</li>
         </ul>
 
-        <h2>3. How Data Is Used</h2>
-        <p>Data is used exclusively for the internal operation of the shop:</p>
+        <h2>3. How Information Is Used</h2>
+        <p>
+            Information is used exclusively for the internal operation of the authorized shop. Specific uses include:
+        </p>
         <ul>
-            <li>Updating and organizing product listings.</li>
-            <li>Synchronizing inventory between systems.</li>
-            <li>Retrieving and fulfilling orders.</li>
-            <li>Generating shipping labels and tracking updates.</li>
+            <li>Creating, updating, and organizing product listings.</li>
+            <li>Synchronizing inventory between the shop and manufacturing systems.</li>
+            <li>Retrieving orders and presenting them for review or fulfillment.</li>
+            <li>Generating shipping labels, updating tracking, and marking orders complete.</li>
         </ul>
-        <p>Data is not used for advertising, analytics profiling, or any purpose outside direct shop operations.</p>
-
-        <h2>2. Data Sharing</h2>
         <p>
-            Data is shared only with the minimum third-party services required to fulfill shop operations, including Etsy, Printify, and shipping providers. No data is sold, rented, or shared with unrelated parties.
+            Information is not used for advertising, analytics profiling, marketing, or any purpose outside direct shop operations.
         </p>
 
-        <h2>4. Data Retention</h2>
+        <h2>4. Data Sharing</h2>
         <p>
-            Operational data is retained only as long as needed to manage the shop, fulfill orders, and comply with applicable tax and record-keeping requirements. When data is no longer needed, it is deleted or anonymized.
+            Data is shared only with the minimum third-party services required to fulfill shop operations. These typically include Etsy, manufacturing or print partners, and shipping providers. No data is sold, rented, licensed, or shared with unrelated parties.
         </p>
 
-        <h2>5. Security</h2>
+        <h2>5. Data Retention</h2>
         <p>
-            Access to the application and its data is restricted to authorized internal users. API credentials are stored securely and are not exposed publicly. Communications with external services use encrypted channels where available.
+            Operational data is retained only as long as needed to manage the shop, fulfill orders, and comply with applicable tax and record-keeping requirements. When data is no longer needed for these purposes, it is deleted or anonymized.
         </p>
 
-        <h2>6. Cookies and Tracking</h2>
+        <h2>6. Security</h2>
+        <p>
+            Access to the application and its data is restricted to authorized internal users. API credentials are stored securely and are not exposed in public repositories, client-side code, or public networks. Communications with external services use encrypted channels where available.
+        </p>
+        <p>
+            The shop owner is responsible for maintaining the confidentiality of credentials and for all activity under authorized accounts.
+        </p>
+
+        <h2>7. Cookies and Tracking</h2>
         <p>
             This application does not use cookies for tracking, advertising, or analytics. No third-party tracking scripts are loaded. Session data, if any, is limited to maintaining authenticated access for authorized operators only.
         </p>
 
-        <h2>7. Children's Privacy</h2>
+        <h2>8. Children's Privacy</h2>
         <p>
             This application is not directed to children under the age of 13. No personal information is knowingly collected from children.
         </p>
 
-        <h2>8. Changes to This Policy</h2>
+        <h2>9. Changes to This Policy</h2>
         <p>
             This policy may be updated from time to time to reflect changes in operations or legal requirements. The updated version will be posted at the same URL with a revised effective date.
         </p>
 
-        <h2>9. Contact</h2>
+        <h2>10. Contact</h2>
         <p>
             For privacy-related questions, contact:<br>
             <a href="mailto:flippy1203@gmail.com">flippy1203@gmail.com</a>
         </p>
     </main>
-    <footer>
+
+    <footer class="site-footer">
         <div class="container">
             <p>&copy; <span id="year"></span> NEXUS Shop Manager. Internal use only.</p>
-            <p>
-                <a href="index.html">Home</a> &middot; <a href="terms.html">Terms of Use</a>
-            </p>
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </nav>
         </div>
     </footer>
+
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>

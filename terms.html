@@ -4,104 +4,209 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Use — NEXUS Shop Manager</title>
+    <meta name="description" content="Terms of use for NEXUS Shop Manager, a private internal application for managing a single Etsy shop.">
     <style>
+        :root {
+            --color-bg: #f8fafc;
+            --color-surface: #ffffff;
+            --color-text: #1e293b;
+            --color-text-secondary: #475569;
+            --color-primary: #0f4c81;
+            --color-primary-dark: #083055;
+            --color-accent: #2563eb;
+            --color-border: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            --radius: 10px;
+            --max-width: 960px;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+            font-family: var(--font-sans);
+            line-height: 1.65;
+            color: var(--color-text);
+            background: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
+
         .container {
-            max-width: 800px;
+            max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 1.5rem;
         }
-        header {
-            background: #1a1a2e;
+
+        .policy-header {
+            background: var(--color-primary-dark);
             color: #fff;
-            padding: 2rem 0;
+            padding: 2rem 0 1.75rem;
             text-align: center;
         }
-        header h1 {
+
+        .policy-header h1 {
             font-size: 1.5rem;
-            font-weight: 600;
+            font-weight: 700;
         }
-        nav {
-            background: #16213e;
-            padding: 1rem 0;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-        nav a {
-            color: #e0e0e0;
-            text-decoration: none;
+
+        .policy-header p {
+            opacity: 0.85;
+            margin-top: 0.35rem;
             font-size: 0.95rem;
         }
-        nav a:hover {
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 0.75rem;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
             color: #fff;
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
+
+        .site-header {
+            background: var(--color-primary-dark);
+            color: #fff;
+            padding: 1.25rem 0;
+        }
+
+        .site-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .brand {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            text-decoration: none;
+            color: #fff;
+            white-space: nowrap;
+        }
+
+        .nav {
+            display: flex;
+            gap: 1.75rem;
+            align-items: center;
+        }
+
+        .nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .nav a:hover {
+            color: #fff;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
         main {
-            padding: 2rem 0;
+            padding: 2.5rem 0 3.5rem;
         }
+
         h2 {
             font-size: 1.2rem;
-            margin: 1.5rem 0 0.75rem;
-            color: #1a1a2e;
+            font-weight: 700;
+            margin: 2rem 0 0.6rem;
+            color: var(--color-primary-dark);
         }
+
         p {
             margin-bottom: 1rem;
         }
-        ul {
+
+        ul, ol {
             margin-left: 1.5rem;
             margin-bottom: 1rem;
         }
+
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
-        footer {
-            background: #1a1a2e;
-            color: #aaa;
-            text-align: center;
-            padding: 1.5rem 0;
-            font-size: 0.85rem;
+
+        a {
+            color: var(--color-primary);
         }
-        footer a {
-            color: #ccc;
+
+        a:hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
+
+        :focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+            border-radius: 3px;
+        }
+
+        @media print {
+            .site-header,
+            .policy-header {
+                background: none;
+                color: #000;
+            }
+            .nav a {
+                color: #000;
+                text-decoration: underline;
+            }
+        }
+
         @media (max-width: 600px) {
-            nav ul {
-                flex-direction: column;
-                gap: 0.75rem;
-                align-items: center;
+            .nav {
+                gap: 1rem;
+            }
+            .nav a {
+                font-size: 0.85rem;
+            }
+            main {
+                padding: 1.75rem 0 2.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
+    <header class="policy-header">
         <div class="container">
             <h1>Terms of Use</h1>
             <p>NEXUS Shop Manager</p>
+            <a class="back-link" href="index.html">← Back to home</a>
         </div>
     </header>
-    <nav>
+
+    <header class="site-header">
         <div class="container">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms of Use</a></li>
-            </ul>
+            <a class="brand" href="index.html">NEXUS Shop Manager</a>
+            <nav class="nav" aria-label="Primary">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </nav>
         </div>
-    </nav>
+    </header>
+
     <main class="container">
         <p><strong>Effective date:</strong> 2026-06-30</p>
 
@@ -114,44 +219,51 @@
         <p>
             NEXUS Shop Manager may be used only for the internal management of a single Etsy shop owned by the operator. Permitted activities include listing management, inventory synchronization, order retrieval, and fulfillment workflows.
         </p>
+        <p>
+            Use of the application is limited to the shop owner and operators explicitly authorized in writing. Unauthorized access or use is prohibited.
+        </p>
 
         <h2>3. Prohibited Use</h2>
         <p>You may not use this application to:</p>
         <ul>
             <li>Operate, manage, or interfere with any shop other than the authorized shop.</li>
             <li>Scrape, harvest, or collect data from third-party sites or services.</li>
-            <li>Reverse engineer, decompile, or attempt to extract source code.</li>
-            <li>Use the application in any way that violates applicable law or platform terms.</li>
+            <li>Reverse engineer, decompile, or attempt to extract source code beyond what is openly provided in this repository.</li>
+            <li>Use the application in any way that violates applicable law or the terms of integrated platforms such as Etsy.</li>
+            <li>Share, sublicense, or provide access to unauthorized third parties.</li>
         </ul>
 
         <h2>4. Accounts and Access</h2>
         <p>
-            Access is restricted to explicitly authorized operators. The shop owner is responsible for maintaining the confidentiality of credentials and for all activity under authorized accounts.
+            Access is restricted to explicitly authorized operators. The shop owner is responsible for maintaining the confidentiality of login credentials and for all activity that occurs under authorized accounts.
+        </p>
+        <p>
+            Authorized users must report any unauthorized access or security concern immediately.
         </p>
 
         <h2>5. Intellectual Property</h2>
         <p>
-            The application, its design, and supporting materials are the property of the shop owner. Etsy-related trademarks remain the property of Etsy, Inc. Third-party service marks remain the property of their respective owners.
+            The application code, design, documentation, and supporting materials are the property of the shop owner. Etsy-related trademarks and service marks remain the property of Etsy, Inc. Third-party service marks remain the property of their respective owners.
         </p>
 
         <h2>6. Third-Party Services</h2>
         <p>
-            This application integrates with third-party services including Etsy, Printify, and shipping providers. Your use of those services is subject to their own terms and policies. We are not responsible for the availability, accuracy, or practices of third-party services.
+            This application integrates with third-party services including Etsy, manufacturing or print partners, and shipping providers. Your use of those services is subject to their own terms, policies, and privacy practices. We are not responsible for the availability, accuracy, or practices of third-party services.
         </p>
 
         <h2>7. Disclaimer of Warranties</h2>
         <p>
-            This application is provided "as is" for internal business use. There are no warranties of merchantability, fitness for a particular purpose, or non-infringement. We do not guarantee uninterrupted or error-free operation.
+            This application is provided "as is" for internal business use. There are no warranties of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement. We do not guarantee uninterrupted, secure, or error-free operation.
         </p>
 
         <h2>8. Limitation of Liability</h2>
         <p>
-            To the maximum extent permitted by law, the shop owner and application operators shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from the use or inability to use this application.
+            To the maximum extent permitted by applicable law, the shop owner and application operators shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from the use or inability to use this application, including loss of profits, data, or business opportunities.
         </p>
 
         <h2>9. Changes to Terms</h2>
         <p>
-            These terms may be updated periodically. Continued use of the application after changes are posted constitutes acceptance of the revised terms.
+            These terms may be updated periodically to reflect changes in operations, features, or legal requirements. The current version will be maintained at the same URL with a revised effective date. Continued use of the application after changes are posted constitutes acceptance of the revised terms.
         </p>
 
         <h2>10. Contact</h2>
@@ -160,14 +272,18 @@
             <a href="mailto:flippy1203@gmail.com">flippy1203@gmail.com</a>
         </p>
     </main>
-    <footer>
+
+    <footer class="site-footer">
         <div class="container">
             <p>&copy; <span id="year"></span> NEXUS Shop Manager. Internal use only.</p>
-            <p>
-                <a href="index.html">Home</a> &middot; <a href="privacy.html">Privacy Policy</a>
-            </p>
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </nav>
         </div>
     </footer>
+
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
